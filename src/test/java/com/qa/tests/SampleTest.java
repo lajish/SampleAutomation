@@ -21,16 +21,14 @@ public class SampleTest {
 
 	@BeforeMethod
 	@Parameters({ "browser" })
-	public void beforeMethod(String browser) {
+	private void beforeMethod(String browser) {
 		System.out.println("1. I am into BeforeMethod annotated method");
 		if (browser.equalsIgnoreCase("Chrome")) {
 			System.setProperty("webdriver.chrome.driver", getResource(browser));
-			System.out.println("Path is "+getResource(browser));
 			driver = new ChromeDriver();
 		} 
 		else if (browser.equalsIgnoreCase("Firefox")) {
 			System.setProperty("webdriver.gecko.driver", getResource(browser));
-			System.out.println("Path is "+getResource(browser));
 			driver = new FirefoxDriver();
 		}
 		driver.manage().window().maximize();
@@ -39,7 +37,7 @@ public class SampleTest {
 	}
 
 	@Test
-	public void actualTest() {
+	private void actualTest() {
 		System.out.println("2. I am into Test annotated method");
 		driver.get("https://opensource-demo.orangehrmlive.com/");
 		driver.findElement(username).click();
@@ -55,7 +53,7 @@ public class SampleTest {
 	}
 
 	@AfterMethod
-	public void afterMethod() {
+	private void afterMethod() {
 		System.out.println("3. I am into AfterMethod annotated method");
 		driver.quit();
 	}
