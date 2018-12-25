@@ -3,7 +3,7 @@ pipeline {
 	stages{
 		stage('Cloning') {
 			steps {
-				echo "This stage is for cloning"
+				echo "This stage is for repository cloning"
 				}
 			}
 		 stage('Execution') {
