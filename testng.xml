@@ -3,7 +3,7 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
   
-  <parameter name="browser" value="Firefox"></parameter>
+  <!-- <parameter name="browser" value="Firefox"></parameter> -->
     <classes>
       <class name="com.qa.tests.SampleTest"/>
     </classes>
